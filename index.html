@@ -1,1 +1,458 @@
-...
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUVU - Complementos Alimenticios & Bio-Optimización</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Playfair+Display:ital@1&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <style>
+        .desktop-nav {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        .desktop-nav a.nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.4s ease;
+        }
+        .sticky-nav.scrolled .desktop-nav a.nav-link {
+            color: var(--primary-color);
+        }
+        @media (max-width: 1000px) {
+            .desktop-nav { display: none; }
+        }
+    </style>
+</head>
+<body class="">
+    
+    <!-- Navbar: Exactamente la estructura de Medvi -->
+    <header class="sticky-nav">
+        <a href="index.html" class="logo" style="text-decoration:none;">NUVU</a>
+        <nav class="desktop-nav">
+            <a href="#peso" class="nav-link">Pérdida de Peso</a>
+            <a href="#cabello" class="nav-link">Cabello</a>
+            <a href="#piel" class="nav-link">Piel</a>
+            <a href="#longevidad" class="nav-link">Longevity</a>
+            <a href="#cognicion" class="nav-link">Cognición</a>
+            <a href="#hipertrofia" class="nav-link">Hipertrofia</a>
+            <a href="assessment.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Iniciar Evaluación</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <select class="lang-selector custom-select" onchange="window.translatePage(this.value)" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: inherit; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer; outline: none;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="en" style="color:#000;">EN</option>
+                <option value="fr" style="color:#000;">FR</option>
+                <option value="de" style="color:#000;">DE</option>
+                <option value="lb" style="color:#000;">LB</option>
+            </select>
+            <button class="burger-menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú Desplegable (Medvi Style) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-content">
+            <h3 class="menu-title">Catálogo de Productos</h3>
+            <a href="#peso" class="menu-link">Pérdida de Peso Metabolómica</a>
+            <a href="#cabello" class="menu-link">Restauración Capilar</a>
+            <a href="#piel" class="menu-link">Dermatología Celular</a>
+            <a href="#longevidad" class="menu-link">Longevity & Peptides</a>
+            <a href="#cognicion" class="menu-link">Cognición y Flow State</a>
+            <a href="#hipertrofia" class="menu-link">Hipertrofia Clínica</a>
+            
+            <hr class="menu-divider">
+            
+            <a href="#testimonios" class="menu-link">Testimonios Reales</a>
+            <a href="#about" class="menu-link">Acerca de NUVU</a>
+            <a href="#contacto" class="menu-link">Contacto</a>
+            
+            <a href="assessment.html" class="btn btn-primary" style="display:block; text-align:center; margin-top:2rem;">Iniciar Evaluación de Salud</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero: Estilo Médico Directo (NUVU Concept) -->
+        <section class="medvi-hero" style="background: radial-gradient(circle at 50% 0%, #202020 0%, #0a0a0a 100%); color:#fff; padding: 14rem 5% 10rem; text-align: center;">
+            <span class="trust-badge" style="letter-spacing: 4px; opacity: 0.8;">NUVU • NEW YOU</span>
+            <h1 style="max-width: 1000px; margin: 1.5rem auto; line-height:1.1; font-size: 4rem;">Unveil the <span class="serif-accent" style="font-style: italic;">New You</span> through biology.</h1>
+            <p style="color: #aaa; max-width: 650px; margin: 2rem auto; font-size: 1.3rem; font-weight: 300; line-height: 1.6;">Complementos alimenticios de alta calidad para el metabolismo, la cognición y el bienestar celular. Formulaciones diseñadas con ingredientes activos avalados por la ciencia.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+                <a href="assessment.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Verificar mi Elegibilidad</a>
+            </div>
+        </section>
+
+
+        <!-- Tratamiento 1: Pérdida de Peso -->
+        <section id="peso" class="treatment-section" style="padding: 8rem 5%; background: var(--bg-color);">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_thermo_white_cap_1775685004171.png" alt="Thermo Matrix Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#fff;">COMPLEMENTO ALIMENTICIO: THERMO MATRIX</span>
+                    <h2>Apoyo al <span class="serif-accent">Control de Peso</span> y el Metabolismo.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Fórmula avanzada con ingredientes seleccionados que contribuyen al mantenimiento de un metabolismo normal y a la gestión del peso corporal como parte de una dieta variada y equilibrada.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>La cafeína contribuye al aumento del gasto energético*</li>
+                        <li>El cromo contribuye al mantenimiento de niveles de glucosa normales*</li>
+                        <li>La vitamina B6 contribuye a un metabolismo energético normal*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; border: 1px solid #111; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="display: flex; flex-wrap: wrap;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/lifestyle_thermo_1775663537245.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario del Thermo Matrix">
+            </div>
+            <div style="flex: 1 1 50%; background:#111; color:#fff; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Transparencia absoluta.</h3>
+                <p style="color:#aaa; font-size: 1.2rem; line-height: 1.6;">Observa los resultados del Thermo Matrix combinados con los ajustes precisos indicados por nuestro equipo. Personas reales, resultados reales.</p>
+            </div>
+        </section>
+
+        <!-- Tratamiento 2: Cabello -->
+        <section id="cabello" class="treatment-section" style="padding: 8rem 5%; background: #ffffff;">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#f8f9fa;">COMPLEMENTO ALIMENTICIO: FOLLICLE COMPLEX</span>
+                    <h2>Apoyo a la <span class="serif-accent">Salud Capilar</span>.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Fórmula enriquecida con Biotina, Zinc y extracto de Saw Palmetto, nutrientes que contribuyen al mantenimiento del cabello y la piel en condiciones normales.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>La biotina contribuye al mantenimiento del cabello normal*</li>
+                        <li>El zinc contribuye al mantenimiento del cabello normal*</li>
+                        <li>La niacina contribuye al mantenimiento de la piel normal*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_hair_1775686845545.png" alt="Follicle Rx Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+            </div>
+        </section>
+        
+        <section style="display: flex; flex-wrap: wrap; flex-direction: row-reverse;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/nuvu_lifestyle_hair_1775686879994.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario de Follicle Complex">
+            </div>
+            <div style="flex: 1 1 50%; background:#f5f6f8; color:#111; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Recupera tu densidad.</h3>
+                <p style="color:#555; font-size: 1.2rem; line-height: 1.6;">No es cosmética temporal, es nutrición avanzada desde el interior. Testimonios del fortalecimiento capilar tras 12 semanas de uso.</p>
+            </div>
+        </section>
+
+        <!-- Tratamiento 3: Cuidado de la piel -->
+        <section id="piel" class="treatment-section" style="padding: 8rem 5%; background: var(--bg-color);">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_skin_1775686858060.png" alt="Dermal Rx Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#fff;">COMPLEMENTO ALIMENTICIO: DERMAL COMPLEX</span>
+                    <h2>Apoyo a la <span class="serif-accent">Salud de la Piel</span>.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Complejo de ácido hialurónico, vitamina C y colágeno hidrolizado que contribuye al mantenimiento de la piel normal y a la protección de las células frente al estrés oxidativo.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>La vitamina C contribuye a la formación normal del colágeno*</li>
+                        <li>La vitamina E contribuye a la protección frente al estrés oxidativo*</li>
+                        <li>El selenio contribuye al mantenimiento del cabello and uñas normales*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; border: 1px solid #111; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="display: flex; flex-wrap: wrap;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/nuvu_lifestyle_skin_1775686893798.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario de Dermal Complex">
+            </div>
+            <div style="flex: 1 1 50%; background:#111; color:#fff; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Luminosidad Natural.</h3>
+                <p style="color:#aaa; font-size: 1.2rem; line-height: 1.6;">Nutrición desde el interior. Los usuarios de Dermal Complex apoyan la salud de su piel de manera que pueda lucir radiante de forma natural.</p>
+            </div>
+        </section>
+
+        <!-- Tratamiento 4: Longevity y Peptides -->
+        <section id="longevidad" class="treatment-section" style="padding: 8rem 5%; background: #ffffff;">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#f8f9fa;">COMPLEMENTO ALIMENTICIO: NAD+ COMPLEX</span>
+                    <h2>Vitalidad y <span class="serif-accent">Bienestar Celular</span>.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Complejo de Nicotinamida Ribósido (NR), Resveratrol y Coenzima Q10, micronutrientes que contribuyen a la reducción del cansancio y la fatiga, y al funcionamiento normal del metabolismo energético.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>La niacina contribuye a la reducción del cansancio y la fatiga*</li>
+                        <li>La vitamina B12 contribuye al funcionamiento normal del sistema nervioso*</li>
+                        <li>El magnesio contribuye a un metabolismo energético normal*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; border: 1px solid #111; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_peptides_1775686869028.png" alt="Peptides Longevity Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+            </div>
+        </section>
+        
+        <section style="display: flex; flex-wrap: wrap; flex-direction: row-reverse;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/nuvu_lifestyle_peptides_1775686906470.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario de Longevidad Peptides">
+            </div>
+            <div style="flex: 1 1 50%; background:#f5f6f8; color:#111; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Hackear el envejecimiento.</h3>
+                <p style="color:#555; font-size: 1.2rem; line-height: 1.6;">Usuarios sobre la cincuentena apoyan su bienestar general mediante nutrición avanzada. El estilo de vida es clave.</p>
+            </div>
+        </section>
+
+        <!-- Tratamiento 5: Cognición -->
+        <section id="cognicion" class="treatment-section" style="padding: 8rem 5%; background: var(--bg-color);">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_neuro_white_cap_1775685031191.png" alt="Neuro Focus Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#f8f9fa;">COMPLEMENTO ALIMENTICIO: NEURO FOCUS</span>
+                    <h2>Apoyo a la <span class="serif-accent">Función Cognitiva</span>.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Fórmula con Bacopa Monnieri, Lion's Mane y vitaminas del grupo B seleccionadas que contribuyen al funcionamiento normal del sistema nervioso and a la reducción del cansancio y la fatiga.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>La vitamina B5 contribuye al rendimiento mental normal*</li>
+                        <li>La vitamina B1 contribuye al funcionamiento normal del corazón*</li>
+                        <li>El ácido fólico contribuye a la función psicológica normal*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; border: 1px solid #111; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="display: flex; flex-wrap: wrap;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/lifestyle_neuro_1775663556362.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario de Neuro">
+            </div>
+            <div style="flex: 1 1 50%; background:#111; color:#fff; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Claridad Absoluta.</h3>
+                <p style="color:#aaa; font-size: 1.2rem; line-height: 1.6;">Nuestros usuarios reportan un mayor apoyo en su rutina de trabajo diario, favoreciendo la concentración sostenida a lo largo de la jornada.</p>
+            </div>
+        </section>
+
+        <!-- Tratamiento 6: Hipertrofia -->
+        <section id="hipertrofia" class="treatment-section" style="padding: 8rem 5%; background: #ffffff;">
+            <div class="split-layout" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="treatment-info">
+                    <span class="trust-badge" style="color:#111; border-color:rgba(0,0,0,0.1); background:#f8f9fa;">COMPLEMENTO ALIMENTICIO: PREMIUM WHEY ISOLATE</span>
+                    <h2>Apoyo al <span class="serif-accent">Rendimiento Físico</span> y la Masa Muscular.</h2>
+                    <p style="margin: 1.5rem 0; font-size:1.1rem; color: #555;">Proteína de suero de leche aislada, microfiltrada en frío, con alto perfil de aminoácidos esenciales and BCAAs. Libre de lactosa. Contribuye al crecimiento y mantenimiento de la masa muscular normal.</p>
+                    <ul class="clean-list" style="margin-top: 2rem;">
+                        <li>Las proteínas contribuyen al crecimiento de la masa muscular*</li>
+                        <li>Las proteínas contribuyen al mantenimiento de la masa muscular*</li>
+                        <li>La vitamina D contribuye al mantenimiento de los huesos en condiciones normales*</li>
+                    </ul>
+                    <p style="font-size: 0.82rem; color: #999; margin-top: 1.5rem;">*Declaraciones autorizadas por el Reglamento (CE) n.º 432/2012. Complemento alimenticio. No sustituye a una dieta equilibrada.</p>
+                    <a href="assessment.html" class="btn btn-primary" style="background:#111; color:#fff; margin-top:2rem;">Iniciar Evaluación</a>
+                </div>
+                <div class="treatment-images">
+                    <img src="images/nuvu_packaging_whey_white_cap_1775685018815.png" alt="Whey Isolate Medication" style="width:100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+            </div>
+        </section>
+
+        <section style="display: flex; flex-wrap: wrap; flex-direction: row-reverse;">
+            <div style="flex: 1 1 50%; min-width: 300px;">
+                <img src="images/nuvu_lifestyle_hypertrophy_1775687129827.png" style="width:100%; height: 100%; object-fit: cover; display: block;" alt="Usuario de Hipertrofia">
+            </div>
+            <div style="flex: 1 1 50%; background:#f5f6f8; color:#111; display:flex; flex-direction:column; justify-content:center; padding: 6rem 8%;">
+                <h3 style="font-size: 2.8rem; margin-bottom:1.5rem; line-height: 1.1;">Rendimiento Físico Crudo.</h3>
+                <p style="color:#555; font-size: 1.2rem; line-height: 1.6;">Evolucionar físicamente requiere nutrientes de alta pureza. Nuestro aislado proteico alimenta el desarrollo muscular con macronutrientes de la más alta calidad.</p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (Medvi Style) -->
+        <!-- Testimonios (Infinite Marquee) -->
+        <section id="testimonios" style="padding: 10rem 0; background: #fafafa; overflow:hidden;">
+            
+                <style>
+                    .marquee-wrapper {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        position: relative;
+                        width: 100vw;
+                        margin-left: 50%;
+                        transform: translateX(-50%);
+                        padding: 2rem 0;
+                        background: #fafafa;
+                    }
+                    .marquee-track {
+                        display: inline-flex;
+                        gap: 2rem;
+                        animation: scroll-marquee 40s linear infinite;
+                    }
+                    .marquee-wrapper:hover .marquee-track {
+                        animation-play-state: paused;
+                    }
+                    @keyframes scroll-marquee {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                    }
+                    .testimonial-card-marquee {
+                        width: 400px;
+                        background: #fff;
+                        padding: 2.5rem;
+                        border-radius: 20px;
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        white-space: normal;
+                        flex-shrink: 0;
+                        border: 1px solid #eee;
+                    }
+                    .testimonial-card-marquee img {
+                        width: 100%;
+                        height: 350px;
+                        border-radius: 12px;
+                        object-fit: cover;
+                        margin-bottom: 2rem;
+                    }
+                </style>
+
+                <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <div class="testimonial-card-marquee">
+                        <img src="carlos.png" alt="Carlos V.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Increíble. Llevo 8 semanas en el programa de Thermo Matrix y he empezado a oxidar grasa localizada sin perder claridad mental."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Carlos V.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Thermo Matrix</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="elena.png" alt="Elena M.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"El conserje clínico fue muy claro con las dosis. Iniciar con NAD+ me ha quitado un peso biológico enorme de encima."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Elena M.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: NAD+ Complex</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="sofia.png" alt="Sofía P.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Dermal Rx hizo por mi piel madura más en 60 días que años de ir a consultas cosméticas de relleno. Simplemente impresionante."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Sofía P.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Dermal Complex</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="david.png" alt="David R.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Trabajando en banca de inversión, mi margen de error es cero. Neuro Focus blindó mi agudeza mental en jornadas de 14 horas."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">David R.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Neuro Focus</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="marcos.png" alt="Marcos L.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Dudaba de los tópicos porque probé todos. La formulación clínica de NUVU reactivó mis folículos coronales en el tercer mes."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Marcos L.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Follicle Complex</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="lucia.png" alt="Lucía T.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Nunca había probado un aislado microfiltrado que no me distendiera el estómago. Retengo músculo limpio and me siento ligera todo el día."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Lucía T.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Premium Isolate</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card-marquee">
+                        <img src="carlos.png" alt="Carlos V.">
+                        <div style="color:var(--text-color); font-size: 1.2rem; margin-bottom:1rem; letter-spacing:2px;">★★★★★</div>
+                        <p style="font-size: 1.15rem; color:#444; line-height: 1.6; margin-bottom:2rem; font-style:italic;">"Increíble. Llevo 8 semanas en el programa de Thermo Matrix and he empezado a oxidar grasa localizada sin perder claridad mental."</p>
+                        <div style="margin-top: auto; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                            <h4 style="margin:0; font-family:var(--font-main); font-size: 1.2rem;">Carlos V.</h4>
+                            <span style="font-size:0.9rem; color:#888;">Producto: Thermo Matrix</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How it works (Embudo Clínico Estilo Medvi) -->
+        <section class="how-it-works" style="padding: 8rem 5%; text-align:center; background: #ffffff; border-top: 1px solid #eee;">
+            <h2 style="font-size: 2.5rem;">Cómo interactuar con NUVU</h2>
+            <p style="color: #666; max-width: 600px; margin: 1rem auto 4rem; font-size: 1.1rem;">Nuestro enfoque basado en la evidencia asegura suplementación de alta calidad.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4rem; max-width: 1100px; margin: 0 auto; text-align: left;">
+                <div style="position: relative;">
+                    <h1 style="color:#f0f0f0; font-size: 8rem; position:absolute; top:-60px; left:-20px; z-index:0; font-weight: 800; line-height:1;">1</h1>
+                    <div style="position: relative; z-index: 1;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Evaluación Online</h3>
+                        <p style="color:#666; font-size: 1.05rem;">Dinos cuáles son tus problemas y metas biológicas a través de nuestro cuestionario seguro.</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <h1 style="color:#f0f0f0; font-size: 8rem; position:absolute; top:-60px; left:-20px; z-index:0; font-weight: 800; line-height:1;">2</h1>
+                    <div style="position: relative; z-index: 1;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Aprobación Clínica</h3>
+                        <p style="color:#666; font-size: 1.05rem;">Nuestros sistemas analizan contraindicaciones and te prescriben la formulación exácta para tu biología.</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <h1 style="color:#f0f0f0; font-size: 8rem; position:absolute; top:-60px; left:-20px; z-index:0; font-weight: 800; line-height:1;">3</h1>
+                    <div style="position: relative; z-index: 1;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Envío</h3>
+                        <p style="color:#666; font-size: 1.05rem;">Enviamos los complementos y habilitamos tu acceso a nuestro asistente inteligente.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="assessment.html" class="btn btn-primary" style="margin-top: 5rem; padding: 1.2rem 3rem; font-size: 1.1rem;">Verificar mi Elegibilidad NUVU</a>
+        </section>
+
+    </main>
+
+    <footer id="about" class="minimal-footer">
+        <div class="footer-grid">
+            <div class="footer-brand" id="contacto">
+                <div class="logo">NUVU</div>
+                <p>Unveil the New You. Complementos alimenticios de calidad para tu bienestar.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#peso">Pérdida de Peso</a>
+                <a href="#cabello">Cuidado Capilar</a>
+                <a href="#piel">Dermatología</a>
+                <a href="#longevidad">Longevity & Peptides</a>
+            </div>
+        </div>
+        
+        <!-- Aviso Legal / Legal Banner (EU Compliance) -->
+        <div style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem; margin-top: 2rem; display: flex; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+            <span style="font-size: 1.2rem;">⚠️</span>
+            <p style="font-size: 0.85rem; color: #777; margin: 0; line-height: 1.5; text-align: left; max-width: 1100px;"><strong>Aviso Legal:</strong> Los productos NUVU son complementos alimenticios. No son medicamentos ni sustituyen a una dieta equilibrada y un estilo de vida saludable. Las declaraciones de propiedades saludables se realizan al amparo del Reglamento (CE) n.º 1924/2006. Mantener fuera del alcance de los niños menores de 3 años. No exceder la dosis diaria recomendada. Consulte a un profesional sanitario antes de su uso si está embarazada, en periodo de lactancia o tomando medicación.</p>
+        </div>
+
+        <div class="footer-copy" style="border-top: none; padding-top: 1.5rem;">
+            © 2026 NUVU Health.
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="translate.js"></script>
+</body>
+</html>
