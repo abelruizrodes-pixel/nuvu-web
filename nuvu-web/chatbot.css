@@ -1,0 +1,177 @@
+/* NUVU Chatbot Luxury Aesthetic */
+
+#nuvu-bot-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    font-family: 'Outfit', sans-serif;
+    pointer-events: none; /* IMPIDE QUE LA CAJA INVISIBLE ROBE CLICS AL MENÚ */
+}
+
+#nuvu-bot-window {
+    width: 360px;
+    height: 550px;
+    background: #FFFFFF;
+    pointer-events: auto; /* Reactiva el contenido */
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+    transform-origin: bottom right;
+}
+
+.nuvu-bot-closed #nuvu-bot-window {
+    transform: scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nuvu-bot-open #nuvu-bot-trigger {
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#nuvu-bot-trigger {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Reactiva el botón del bot */
+}
+
+#nuvu-bot-trigger:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#nuvu-bot-trigger svg {
+    width: 28px;
+    height: 28px;
+}
+
+.nuvu-bot-header {
+    padding: 25px;
+    background: #FFFFFF;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #F0F0F0 0%, #FFFFFF 25%, #C2CDD6 50%, #FFFFFF 75%, #F0F0F0 100%) 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nuvu-bot-close {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #CCC;
+    transition: color 0.2s ease;
+}
+
+#nuvu-bot-close:hover {
+    color: #111;
+}
+
+#nuvu-bot-messages {
+    flex: 1;
+    padding: 25px;
+    background: #FAFAFA;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bot-msg, .user-msg {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bot-msg {
+    background: #FFFFFF;
+    color: #111;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.user-msg {
+    background: #111111;
+    color: #FFFFFF;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nuvu-bot-input {
+    padding: 20px;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    gap: 10px;
+}
+
+#nuvu-bot-text {
+    flex: 1;
+    border: 1px solid #E8E8E8;
+    background: #FAFAFA;
+    padding: 14px 18px;
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#nuvu-bot-text:focus {
+    border-color: #111;
+    background: #FFF;
+}
+
+#nuvu-bot-send {
+    background: #111;
+    color: #FFF;
+    border: none;
+    width: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+#nuvu-bot-send:hover {
+    background: #333;
+}
+
+/* Scrollbar styling para ser elegante */
+#nuvu-bot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+#nuvu-bot-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+#nuvu-bot-messages::-webkit-scrollbar-thumb {
+    background: #DDD;
+    border-radius: 10px;
+}

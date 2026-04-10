@@ -1,0 +1,200 @@
+/* Especificidades para las páginas de detalle de producto */
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 100vh;
+    padding-top: 100px; /* offset navbar */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Columna de Galería (Izquierda) */
+.product-gallery {
+    padding: 3rem;
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image-wrapper {
+    background: radial-gradient(circle at center, #FFF 0%, transparent 60%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.product-zoom {
+    width: 80%;
+    max-height: 70vh;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    transition: transform 0.4s ease;
+}
+
+.product-zoom:hover {
+    transform: scale(1.03);
+}
+
+/* Columna de Información (Derecha) */
+.product-info-panel {
+    padding: 3rem 4rem 3rem 1rem;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.product-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.tax-note {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+.benefit-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.benefit-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1rem;
+    font-weight: 600;
+}
+
+/* Selectores de Sabor */
+.flavor-selector {
+    margin-bottom: 2rem;
+}
+
+.flavor-selector label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.flavors {
+    display: flex;
+    gap: 1rem;
+}
+
+.flavor-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.flavor-btn.active, .flavor-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Certificaciones */
+.certifications-banner {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.cert {
+    font-size: 0.8rem;
+    font-weight: 800;
+    background: #E8E8E8;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+}
+
+/* Acciones de Compra */
+.purchase-actions {
+    margin-bottom: 3rem;
+}
+
+.cta-purchase {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+}
+
+.shipping-info {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/* Detalles (Acordeon simulación) */
+.details-accordion {
+    border-top: 1px solid var(--primary-color);
+    padding-top: 2rem;
+}
+
+.accordion-item {
+    margin-bottom: 2rem;
+}
+
+.accordion-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accordion-item p {
+    font-size: 0.95rem;
+}

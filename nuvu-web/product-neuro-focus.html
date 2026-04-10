@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro Focus - NUVU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <header class="sticky-nav scrolled" style="background-color: var(--bg-color); box-shadow: none;">
+        <a href="index.html" class="logo" style="text-decoration:none; color: var(--primary-color);">NUVU</a>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <select class="lang-selector custom-select" onchange="window.translatePage(this.value)" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); color: inherit; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer; outline: none;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="en" style="color:#000;">EN</option>
+                <option value="fr" style="color:#000;">FR</option>
+                <option value="de" style="color:#000;">DE</option>
+                <option value="lb" style="color:#000;">LB</option>
+            </select>
+            <a href="index.html#products" class="pill-link" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Volver al Catálogo</a>
+        </div>
+    </header>
+
+    <main class="product-detail-layout">
+        <div class="product-gallery">
+            <div class="gallery-image-wrapper">
+                <img src="/Users/ark/.gemini/antigravity/brain/aad8cc74-82e0-4ec6-9721-e90d9cee02a0/nuvu_packaging_neuro_white_cap_1775685031191.png" alt="Neuro Focus" class="product-zoom">
+            </div>
+        </div>
+
+        <div class="product-info-panel">
+            <div class="breadcrumbs">Inicio / Clínica / <strong>Cognición</strong></div>
+            
+            <h1 class="product-title">Neuro Focus</h1>
+            <p class="product-subtitle">Matriz Nootrópica de Alto Rendimiento (60 Cápsulas)</p>
+            
+            <div class="product-price">€49.90 <span class="tax-note">Impuestos incluidos.</span></div>
+            
+            <p class="product-description" style="margin-bottom: 2.5rem; line-height: 1.6;">
+                Diseñado para profesionales que no pueden permitirse la niebla mental. Neuro Focus inunda tu sistema nervioso con precursores dopaminérgicos y colinérgicos para facilitar el estado de "Flow" durante hiper-jornadas de 12 horas.
+            </p>
+            
+            <ul class="clean-list" style="margin-top: 0; margin-bottom: 3rem;">
+                <li>Claridad mental profunda y memoria ampliada</li>
+                <li>Reducción del estrés cognitivo (Adaptógenos)</li>
+                <li>Flow state sostenido sin caída de energía (No crash)</li>
+            </ul>
+
+            <div class="certifications-banner">
+                <div class="pill-tag" style="background:#f4f5f7; box-shadow:none;">✔ Ingredientes Patentados</div>
+                <div class="pill-tag" style="background:#f4f5f7; box-shadow:none;">✔ Neuro-Optimizado</div>
+            </div>
+
+            <div class="purchase-actions" style="margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="window.location.href='assessment.html'" style="width: 100%; border-radius:12px; font-size:1.1rem; padding: 1.2rem; background: var(--primary-color); color: #fff;">
+                    Iniciar Evaluación Médica
+                </button>
+                <p style="text-align:center; font-size:0.9rem; margin-top:1rem; color:var(--accent-color);">📦 Envío Express gratuito en pedidos +€50.</p>
+            </div>
+
+            <div class="details-accordion" style="margin-top: 4rem;">
+                <div class="accordion-item">
+                    <h3 style="border-bottom:1px solid #eaeaea; padding-bottom:0.5rem; margin-bottom:1rem;">Ingredientes Nootrópicos</h3>
+                    <p style="font-size:0.95rem; color:#555;">Melena de León (Extracto 30% Polisacáridos), L-Tirosina, Alpha-GPC, Ashwagandha KSM-66®, Extracto de Bacopa Monnieri, L-Teanina y Complejo Vitamina B Clínico.</p>
+                </div>
+                <div class="accordion-item" style="margin-top: 2rem;">
+                    <h3 style="border-bottom:1px solid #eaeaea; padding-bottom:0.5rem; margin-bottom:1rem;">Protocolo Clínico</h3>
+                    <p style="font-size:0.95rem; color:#555;">Consumir 2 cápsulas en ayunas o 45 minutos antes de la sesión de trabajo profundo ("Deep Work"). Para un efecto máximo, consumir acompañado de una fuente de grasas saludables (como Omega-3).</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="minimal-footer" style="padding: 4rem 5% 2rem; margin-top: 4rem;">
+        <div class="footer-copy">
+            &copy; 2026 NUVU Health. Define tu nueva versión.
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="translate.js"></script>
+</body>
+</html>
