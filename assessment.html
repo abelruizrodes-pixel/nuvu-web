@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Bienestar - NUVU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assessment.css">
+</head>
+<body class="assessment-layout">
+    
+    <header class="minimal-header">
+        <a href="index.html" class="logo">NUVU</a>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <select class="lang-selector custom-select" onchange="window.translatePage(this.value)" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); color: inherit; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer; outline: none;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="en" style="color:#000;">EN</option>
+                <option value="fr" style="color:#000;">FR</option>
+                <option value="de" style="color:#000;">DE</option>
+                <option value="lb" style="color:#000;">LB</option>
+            </select>
+            <div class="secure-badge">
+                <svg width="14" height="16" viewBox="0 0 12 14" fill="none" style="margin-right: 5px;">
+                    <path d="M10.5 5.5H11C11.5523 5.5 12 5.94772 12 6.5V13C12 13.5523 11.5523 14 11 14H1C0.447715 14 0 13.5523 0 13V6.5C0 5.94772 0.447715 5.5 1 5.5H1.5V4C1.5 1.79086 3.29086 0 5.5 0h1C7.70914 0 9.5 1.79086 9.5 4V5.5H10.5ZM2.5 5.5H9.5V4C9.5 2.34315 8.15685 1 6.5 1h-1C3.84315 1 2.5 2.34315 2.5 4V5.5Z" fill="currentColor"/>
+                </svg>
+                Datos Protegidos con Cifrado SSL
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Fases (Medvi Style) -->
+    <div class="phase-progress-wrapper">
+        <div class="phase-steps">
+            <span class="phase-step active" id="stepIndicator-1">Perfil</span>
+            <span class="phase-step" id="stepIndicator-2">Historial</span>
+            <span class="phase-step" id="stepIndicator-3">Salud</span>
+            <span class="phase-step" id="stepIndicator-4">Preferencias</span>
+        </div>
+    </div>
+
+    <main class="assessment-main">
+        
+        <!-- STEP 1: BIOMETRICS (START) -->
+        <section class="step-card active" id="step-1">
+            <div class="question-group">
+                <h1 class="question-title">Comencemos con tus <br>datos biométricos.</h1>
+                <p class="question-subtitle">Necesario para recomendarte el complemento alimenticio más adecuado a tu objetivo.</p>
+                
+                <div class="form-container" style="display: grid; gap: 2rem;">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div>
+                            <p class="input-label">Altura (cm)</p>
+                            <input type="number" name="height_cm" class="clinical-input" placeholder="cm">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <p class="input-label">Peso Actual (kg)</p>
+                            <input type="number" name="weight_kg" class="clinical-input" placeholder="kg">
+                        </div>
+                        <div>
+                            <p class="input-label">Peso Objetivo (kg)</p>
+                            <input type="number" name="target_weight_kg" class="clinical-input" placeholder="kg">
+                        </div>
+                    </div>
+
+                    <div class="options-list">
+                        <p class="input-label">Sexo Biológico</p>
+                        <div style="display: flex; gap: 1rem;">
+                            <label class="option-panel" style="flex: 1;">
+                                <input type="radio" name="gender" value="male">
+                                <div class="indicator"></div>
+                                <span class="option-label">Masculino</span>
+                            </label>
+                            <label class="option-panel" style="flex: 1;">
+                                <input type="radio" name="gender" value="female">
+                                <div class="indicator"></div>
+                                <span class="option-label">Femenino</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="input-label">Fecha de Nacimiento</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 1rem;">
+                            <select name="dob_month" id="dob_month" class="clinical-input">
+                                <option value="">Mes</option>
+                            </select>
+                            <select name="dob_day" id="dob_day" class="clinical-input">
+                                <option value="">Día</option>
+                            </select>
+                            <select name="dob_year" id="dob_year" class="clinical-input">
+                                <option value="">Año</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2: HEALTH QUESTIONS (CHECKBOXES) -->
+        <section class="step-card" id="step-2">
+            <div class="question-group">
+                <h1 class="question-title">Información de <br>Salud General.</h1>
+                <p class="question-subtitle">Ayuda a nuestro equipo a orientarte hacia los complementos más seguros para ti. Si tienes alguna condición de salud, consulta siempre con tu médico.</p>
+                
+                <div class="options-list">
+                    <label class="option-panel checkbox">
+                        <input type="checkbox" name="hcondition" value="cancer">
+                        <div class="indicator" style="border-radius: 4px;"></div>
+                        <span class="option-label">Historial de Cáncer (Tiroides/otros)</span>
+                    </label>
+                    <label class="option-panel checkbox">
+                        <input type="checkbox" name="hcondition" value="heart">
+                        <div class="indicator" style="border-radius: 4px;"></div>
+                        <span class="option-label">Enfermedad Cardíaca o Arritmias</span>
+                    </label>
+                    <label class="option-panel checkbox">
+                        <input type="checkbox" name="hcondition" value="diabetes">
+                        <div class="indicator" style="border-radius: 4px;"></div>
+                        <span class="option-label">Diabetes Tipo 1 o Tipo 2</span>
+                    </label>
+                    <label class="option-panel checkbox">
+                        <input type="checkbox" name="hcondition" value="pancreatitis">
+                        <div class="indicator" style="border-radius: 4px;"></div>
+                        <span class="option-label">Historial de Pancreatitis</span>
+                    </label>
+                    <label class="option-panel checkbox none-option">
+                        <input type="checkbox" name="hcondition" value="none">
+                        <div class="indicator" style="border-radius: 4px;"></div>
+                        <span class="option-label">Ninguna de las anteriores</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: VITALS & MEDS -->
+        <section class="step-card" id="step-3">
+            <div class="question-group">
+                <h1 class="question-title">Sobre tu <br>Bienestar General.</h1>
+                <p class="question-subtitle">Esta información nos permite orientarte con más precisión. NUVU no realiza diagnósticos médicos.</p>
+                
+                <div class="options-list">
+                    <p class="input-label">¿Cómo consideras tu tensión arterial habitualmente?</p>
+                    <label class="option-panel">
+                        <input type="radio" name="bp" value="normal">
+                        <div class="indicator"></div>
+                        <span class="option-label">Normal (según mi última revisión)</span>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="bp" value="elevated">
+                        <div class="indicator"></div>
+                        <span class="option-label">Me han comentado que es alta</span>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="bp" value="unknown">
+                        <div class="indicator"></div>
+                        <span class="option-label">No lo sé / No me la han medido</span>
+                    </label>
+                </div>
+
+                <div class="options-list" style="margin-top:2rem">
+                    <p class="input-label">¿Su ritmo cardíaco de manera habitual se siente?</p>
+                    <label class="option-panel">
+                        <input type="radio" name="hr" value="normal">
+                        <div class="indicator"></div>
+                        <span class="option-label">Normal, sin alteraciones perceptibles</span>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="hr" value="irregular">
+                        <div class="indicator"></div>
+                        <span class="option-label">Noto palpitaciones o irregularidades</span>
+                    </label>
+                </div>
+
+                <div class="options-list" style="margin-top:2rem">
+                    <p class="input-label">¿Estas tomando actualmente algún medicamento de prescripción?</p>
+                    <p style="font-size: 0.82rem; color: #999; margin-bottom: 1rem;">Esta información es orientativa. Consulta siempre con tu facultativo si tienes dudas sobre interacciones.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <label class="option-panel" style="flex:1">
+                            <input type="radio" name="meds" value="yes">
+                            <div class="indicator"></div>
+                            <span class="option-label">Sí</span>
+                        </label>
+                        <label class="option-panel" style="flex:1">
+                            <input type="radio" name="meds" value="no">
+                            <div class="indicator"></div>
+                            <span class="option-label">No</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 4: INTERMEDIATE (PACE & HOOK) -->
+        <section class="step-card" id="step-4">
+            <div class="engagement-hook">
+                <h1 class="question-title">Tu ritmo de <br>transformación.</h1>
+                <p class="question-subtitle">Basado en tu perfil, podrías perder aprox. 1.2 - 2 kg por semana.</p>
+                
+                <div class="options-list">
+                    <label class="option-panel">
+                        <input type="radio" name="pace" value="good">
+                        <div class="indicator"></div>
+                        <span class="option-label">Ese ritmo es perfecto para mí</span>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="pace" value="fast">
+                        <div class="indicator"></div>
+                        <span class="option-label">Deseo un ritmo más acelerado</span>
+                    </label>
+                </div>
+
+                <div class="hook-stats" style="margin-top: 3rem; background: #fdfdfd; border: 1px solid #eee; padding: 2rem; border-radius: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="color:#888;">IMC Calculado:</span>
+                        <strong id="display-bmi" style="font-size: 1.5rem;">--</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="color:#888;">Peso Actual vs Objetivo:</span>
+                        <p style="font-size: 1.1rem; font-weight: 600; margin: 0;"><span id="display-weight">--</span> kg → <span id="display-target">--</span> kg</p>
+                    </div>
+                     <p style="font-size: 1.1rem; line-height: 1.6; margin: 0;">Basado en tu perfil, nuestro equipo puede orientarte hacia los complementos más adecuados para tu objetivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 5: PREFERENCES (CUSTOMIZATION) -->
+        <section class="step-card" id="step-5">
+            <div class="question-group">
+                <h1 class="question-title">Tus <br>Preferencias.</h1>
+                <p class="question-subtitle">Personaliza tu plan de bienestar.</p>
+                
+                <div class="options-list">
+                    <p class="input-label">¿Qué priorizas en tu plan?</p>
+                    <label class="option-panel">
+                        <input type="radio" name="priority" value="potency">
+                        <div class="indicator"></div>
+                        <div>
+                            <span class="option-label">Mayor Concentración de Nutrientes</span>
+                            <span class="option-desc">Fórmulas con dosis más altas de ingredientes activos.</span>
+                        </div>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="priority" value="price">
+                        <div class="indicator"></div>
+                        <div>
+                            <span class="option-label">Mejor Relación Calidad/Precio</span>
+                            <span class="option-desc">Plan optimizado para un uso continuado y sostenible.</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="options-list" style="margin-top:2rem">
+                    <p class="input-label">Formato preferido</p>
+                    <label class="option-panel">
+                        <input type="radio" name="delivery" value="capsule">
+                        <div class="indicator"></div>
+                        <span class="option-label">Cápsulas (Uso oral diario)</span>
+                    </label>
+                    <label class="option-panel">
+                        <input type="radio" name="delivery" value="powder">
+                        <div class="indicator"></div>
+                        <span class="option-label">Polvo soluble (batido o bebida)</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 6: LEAD CAPTURE -->
+        <section class="step-card" id="step-6">
+            <div class="question-group">
+                <h1 class="question-title">Tus datos de <br>contacto.</h1>
+                <p class="question-subtitle">Para enviarte tu selección personalizada de complementos.</p>
+                
+                <div class="form-container" style="display: grid; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" name="first_name" class="clinical-input" placeholder="Nombre">
+                        <input type="text" name="last_name" class="clinical-input" placeholder="Apellido">
+                    </div>
+                    <select name="state" class="clinical-input">
+                        <option value="">Estado de Envío...</option>
+                        <option value="TX">Texas</option>
+                        <option value="FL">Florida</option>
+                        <option value="CA">California</option>
+                    </select>
+                    <input type="email" name="email" class="clinical-input" placeholder="email@ejemplo.com">
+                    <input type="tel" name="phone" class="clinical-input" placeholder="Teléfono de contacto">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP LOADING (ANALYSING) -->
+        <section class="step-card" id="step-loading">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <h1 class="question-title" style="text-align: center;">Buscando tu recomendación...</h1>
+                <p style="color: #666;">Preparando tu selección personalizada de complementos NUVU.</p>
+            </div>
+        </section>
+
+        <!-- STEP 7: RESULTS & PRICING -->
+        <section class="step-card" id="step-result">
+            <div class="result-card">
+                <span class="result-badge">Perfil Completado ✓</span>
+                <h1 class="question-title" style="text-align: center;">Tu selección <br>personalizada está lista.</h1>
+                
+                <div class="prescription-summary">
+                    <p style="font-weight: 700; color: var(--medvi-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem;">Complemento Alimenticio Recomendado</p>
+                    <h2 id="rxTitle" style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 1rem;">Thermo Matrix</h2>
+                    <p id="rxDesc" style="font-size: 1.1rem; color: #555; line-height: 1.6;">Basado en tus respuestas, este complemento alimenticio podría ser el más adecuado para tu objetivo de bienestar. Consulta con un profesional de la salud antes de iniciar cualquier suplementación.</p>
+                    
+                    <div style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 2rem;">
+                        <p style="font-size: 0.9rem; color: #888;">Precio orientativo desde</p>
+                        <h3 style="font-size: 2.5rem; margin: 0.5rem 0;">$179<span style="font-size: 1rem; color: #aaa;">/mes</span></h3>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <button class="btn-next" style="width: 100%; justify-content: center;" onclick="window.location.href='index.html'">Ver todos los complementos</button>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 1.5rem;">Complemento alimenticio. No sustituye a una dieta equilibrada. Consulta con tu médico ante cualquier duda.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer de Navegación -->
+    <footer class="assessment-footer" id="navFooter">
+        <button class="btn-back" id="btnBack" style="visibility: hidden;" onclick="handleBack()">← Volver</button>
+        <button class="btn-next" id="btnNext" disabled onclick="handleNext()">Siguiente →</button>
+    </footer>
+
+    <script src="assessment.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Whey - NUVU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <!-- Navbar (Misma que la home) -->
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">NUVU</a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">Filosofía</a></li>
+            <li><a href="index.html#products">Catálogo</a></li>
+            <li><a href="#">Soporte</a></li>
+        </ul>
+        <a href="index.html#products" class="btn btn-outline">Volver al catálogo</a>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <main class="product-detail-layout">
+        <div class="product-gallery">
+            <div class="gallery-image-wrapper">
+                <!-- Utilizamos la misma imagen de IA generada previamente -->
+                <img src="images/nuvu_packaging_whey_white_cap_1775685018815.png" alt="Premium Whey Isolate" class="product-zoom">
+            </div>
+        </div>
+
+        <div class="product-info-panel">
+            <div class="breadcrumbs">Inicio / Suplementos / <strong>Músculo Magro</strong></div>
+            
+            <h1 class="product-title">Premium Whey Isolate</h1>
+            <p class="product-subtitle">Aislado de Suero Ultra-Filtrado (2.5 Kg / 75 Servicios)</p>
+            
+            <div class="product-price">€59.90 <span class="tax-note">Impuestos incluidos.</span></div>
+            
+            <p class="product-description">
+                Diseñada para la excelencia pura. Nuestro aislado Premium de rápida absorción asegura una recuperación muscular sin precedentes y estimula la síntesis proteica gracias a un perfil completo de aminoácidos esenciales (BCAAs).
+            </p>
+            
+            <ul class="benefit-list">
+                <li><span>💪</span> 30g de proteína pura por ración</li>
+                <li><span>🐄</span> Leche certificada de vacas de pastoreo (Grass-fed)</li>
+                <li><span>🚫</span> 0 Azúcares añadidos, sin rellenos innecesarios</li>
+            </ul>
+
+            <div class="flavor-selector">
+                <label>Elige tu sabor:</label>
+                <div class="flavors">
+                    <button class="flavor-btn active">Vainilla Perla</button>
+                    <button class="flavor-btn">Cacao Oscuro</button>
+                </div>
+            </div>
+
+            <div class="certifications-banner">
+                <div class="cert">✔ Certificado GMP</div>
+                <div class="cert">✔ Libre de Doping</div>
+            </div>
+
+            <div class="purchase-actions">
+                <button class="btn btn-primary full-width cta-purchase" onclick="window.location.href='assessment.html'">Iniciar Evaluación Clínica</button>
+                <p class="shipping-info">📦 Envío local asegurado entre 24 - 48h hábiles.</p>
+            </div>
+
+            <div class="details-accordion">
+                <div class="accordion-item">
+                    <h3>Perfil Nutricional</h3>
+                    <p>Por 33g (1 scoop): Calorías: 110 kcal. Proteínas: 30g. Hidratos: 1.2g. Grasas: 0.5g. L-Leucina: 3.2g.</p>
+                </div>
+                <div class="accordion-item">
+                    <h3>Uso Recomendado</h3>
+                    <p>Mezclar 1 scoop (33g) con 250ml de agua o leche. Ideal para tomar inmediatamente después del entrenamiento o al despertar para asegurar el balance de nitrógeno.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-bottom" style="text-align: center; padding: 2rem; background: var(--bg-color);">
+            <p>&copy; 2026 NUVU Health. Define tu nueva versión.</p>
+        </div>
+    </footer>
+    <script src="chatbot.js"></script>
+</body>
+</html>
