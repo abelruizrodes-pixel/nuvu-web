@@ -1,0 +1,349 @@
+/* assessment.css - REFINED TO MATCH MEDVI LUXURY CLINICAL STYLE */
+
+:root {
+    --medvi-gold: #c2a67a;
+    --medvi-dark: #1a1a1a;
+    --medvi-gray-bg: #f9f9f9;
+    --medvi-border: #e8e8e8;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Outfit', sans-serif;
+}
+
+body.assessment-layout {
+    background-color: #ffffff;
+    font-family: var(--font-sans);
+    color: var(--medvi-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.minimal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background-color: #fff;
+    border-bottom: 1px solid var(--medvi-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--medvi-dark);
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* Multi-phase Progress Bar */
+.phase-progress-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 5%;
+}
+
+.phase-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.phase-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--medvi-border);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.phase-step {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 0 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.phase-step.active {
+    color: var(--medvi-gold);
+}
+
+.phase-step.completed {
+    color: var(--medvi-dark);
+}
+
+/* Main Content Area */
+.assessment-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 5% 12rem; /* Increased bottom padding to clear footer absolutely */
+}
+
+.step-card {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-card.active {
+    display: block;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Question Styling */
+.question-group {
+    margin-bottom: 3.5rem;
+}
+
+.question-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 5vw, 2.4rem); /* Responsive font size */
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    text-align: left;
+    color: var(--medvi-dark);
+}
+
+.question-subtitle {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Options Lists (Stacked Panels) */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-panel {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--medvi-gray-bg);
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.option-panel:hover {
+    background: #f0f0f0;
+}
+
+.option-panel input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Custom Radio/Check Indicator */
+.indicator {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.option-panel input:checked + .indicator {
+    border-color: var(--medvi-gold);
+    background: var(--medvi-gold);
+}
+
+.option-panel input:checked + .indicator::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.option-panel.selected {
+    border-color: var(--medvi-gold);
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.option-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.option-desc {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+    margin-top: 0.25rem;
+}
+
+.clinical-input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1rem;
+    border: 1.5px solid var(--medvi-border);
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.clinical-input:focus {
+    border-color: var(--medvi-gold);
+    box-shadow: 0 0 0 4px rgba(194, 166, 122, 0.1);
+}
+
+.input-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.8px;
+    display: block;
+}
+
+/* Action Footer */
+.assessment-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.25rem 8%;
+    border-top: 1px solid var(--medvi-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .assessment-footer {
+        padding: 1rem 5%;
+    }
+    
+    .btn-next {
+        padding: 1rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+.btn-next {
+    background: var(--medvi-gold);
+    color: #fff;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-next:hover {
+    background: #b1956a;
+    transform: translateY(-2px);
+}
+
+.btn-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Loading state */
+.loading-overlay {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #eee;
+    border-top: 3px solid var(--medvi-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 2rem;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Results */
+.result-card {
+    text-align: center;
+}
+
+.result-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.prescription-summary {
+    background: var(--medvi-gray-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    border: 1px solid var(--medvi-border);
+}
